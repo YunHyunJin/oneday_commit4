@@ -1,6 +1,7 @@
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import 'signin.dart';
 import 'tabs/add.dart';
@@ -21,7 +22,9 @@ class _TabBarDemoState extends State<TabBarDemo> {
         length: 4,
         child: Scaffold(
           appBar: AppBar(
-            title: Text("Advanced Flutter"),
+            title: Text("Advanced Flutter",
+              style: GoogleFonts.pacifico(),
+            ),
             backgroundColor: Colors.amber,
             leading: Container(
               child: Builder(builder: (BuildContext context){
