@@ -25,7 +25,8 @@ reportView(context) async {
             child: Text('Report',
                 style: Theme.of(context)
                     .defaultTextStyle
-                    .copyWith(color: PdfColors.grey)));
+                    .copyWith(color: PdfColors.grey))
+        );
       },
       footer: (Context context) {
         return Container(

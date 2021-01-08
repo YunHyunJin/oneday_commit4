@@ -28,6 +28,7 @@ dependencies:
   flutter_signin_button: ^1.0.0
   http: ^0.12.2
   google_fonts: ^1.1.1
+  convex_bottom_bar: ^2.6.0
 
   pdf: ^1.13.0
   flutter_full_pdf_viewer: ^1.0.6

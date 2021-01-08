@@ -40,7 +40,7 @@ class _PDFCreatorState extends State<PDFCreator> {
                     style: TextStyle(
                         color: Colors.white, fontWeight: FontWeight.bold),
                   ),
-                  color: Colors.blue,
+                  color: Colors.amber,
                   onPressed: () {
                     reportView(context);
                   }))),
