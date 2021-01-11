@@ -138,9 +138,9 @@ class _MyHomePageState extends State<MyHomePage> {
         color: Colors.black,
         items: [
           TabItem(icon: Icons.wrong_location_outlined, title: 'apitab'),
-          TabItem(icon: Icons.auto_fix_high, title: 'mlkit'),
+          TabItem(icon: Icons.remove , title: '나선그리기'),
           TabItem(icon: Icons.description, title: 'pdf'),
-          TabItem(icon: Icons.add, title: 'add'),
+          TabItem(icon: Icons.all_inclusive_sharp , title: '직선그리기'),
         ],
         initialActiveIndex: 0,//optional, default as 0
         onTap: (int i ){
