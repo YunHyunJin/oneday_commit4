@@ -107,7 +107,7 @@ class MyHomePage extends StatefulWidget {
 }
 class _MyHomePageState extends State<MyHomePage> {
   int selectedPage = 0;
-  final _pageOptions = [apitab(),  mlkit(),pdf(), add()];
+  final _pageOptions = [BarChartDemo(),  mlkit(),pdf(), add()];
   @override
   Widget build(BuildContext context) {
     return Scaffold(

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:kkk/tabs/apitab.dart';
 
+import 'graph.dart';
 import 'pdf.dart';
 
 class mlkit extends StatefulWidget {
@@ -123,12 +124,13 @@ class _mlkitState extends State<mlkit> {
                   ]
               ),
               Container(
-                  height: 300.0,
+                  height: 600.0,
                   child: TabBarView(
                     children: [
-                      Center(child: Text('오른손 검사 내용')),
-                      Center(child: Text('왼손 검사 내용')),
-                      Center(child: Text('양손 검사 내용')),
+                      graph(),
+                      graph(),
+                      graph(),
+
                     ],
                   )
               )
