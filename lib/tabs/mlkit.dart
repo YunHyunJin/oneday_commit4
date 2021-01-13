@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:kkk/array/test.dart';
 import 'package:kkk/tabs/apitab.dart';
 
 import 'graph.dart';
 import 'pdf.dart';
+enum WhyFarther { harder, smarter, selfStarter, tradingCharter }
 
 class mlkit extends StatefulWidget {
   @override
@@ -80,6 +83,10 @@ class _mlkitState extends State<mlkit> {
   //   );
   // }
   Widget build(BuildContext context) {
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.portraitDown,
+      DeviceOrientation.portraitUp,
+    ]);
     return ListView(children: [
       Container(
           color: Color(0xFFFFF00),
@@ -89,7 +96,13 @@ class _mlkitState extends State<mlkit> {
             children: [
               Text("아직 검사를\n 진행하지 않았습니다", style: TextStyle(color: Colors.black38),),
               RaisedButton(
-                onPressed: () {},
+                onPressed: () {
+                  showDialog(
+                    context: context,
+                    builder: (BuildContext context) => _buildPopupDialog(context),
+                  );
+
+                },
                 textColor: Colors.white,
                 padding: const EdgeInsets.all(0.0),
                 shape:  CircleBorder(),
@@ -137,5 +150,38 @@ class _mlkitState extends State<mlkit> {
             ],
           ))
     ]);
+  }
+  Widget _buildPopupDialog(BuildContext context) {
+    return new AlertDialog(
+      title: const Text('나선 그리기 검'),
+      content: new Column(
+        mainAxisSize: MainAxisSize.min,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
+          Text("측정할 손을 선택해주세요."),
+        ],
+      ),
+      actions: <Widget>[
+        FlatButton(
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => test()),
+            );          },
+          textColor: Colors.blue,
+          child: Text('왼손'),
+        ),
+        FlatButton(
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => test()),
+            );
+            },
+          textColor: Colors.blue,
+          child: Text('오른손'),
+        ),
+      ],
+    );
   }
 }
