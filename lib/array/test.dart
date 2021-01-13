@@ -65,7 +65,41 @@ class _testState extends State<test> {
           )
         ],
       ),
-      body: Text("dsa"),
+      body: Center(
+        child: Container(
+          width: 300.0,
+          height: 400.0,
+          child: CustomPaint(
+            painter: MyPainter(),
+            child: Column(
+              children: [
+                Text( 'hi', style: TextStyle( fontSize: 40.0, color: Colors.yellow, ),),
+                Text('flutter'),
+              ],
+            ),
+          ),
+        ),
+      ),
+
     );
   }
 }
+class MyPainter extends CustomPainter {
+  @override void paint(Canvas canvas, Size size) {
+    var myPaint = Paint();
+    myPaint.color = Colors.amber;
+    canvas.drawPaint(myPaint);
+    myPaint.color = Colors.indigo;
+    canvas.drawLine(Offset(10.0, 10.0), Offset(100.0, 100.0), myPaint);
+    myPaint.color = Colors.indigo;
+    canvas.drawOval(
+        Rect.fromCenter(center: Offset(100.0, 150.0), width: 100.0, height: 80.0),
+        myPaint
+    );
+  }
+  @override bool shouldRepaint(CustomPainter oldDelegate) {
+    return false;
+    }
+  }
+
+
