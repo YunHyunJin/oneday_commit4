@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
+import '../home.dart';
 import 'test.dart';
 
 class result extends StatefulWidget {
@@ -19,10 +20,24 @@ class _resultState extends State<result> {
       appBar: AppBar(
         title: Text("검사 결과"),
         backgroundColor: Colors.blueGrey,
+        leading: IconButton(
+          color: Colors.white,
+          icon: Icon(Icons.arrow_back),
+          onPressed: (){
+            SystemChrome.setPreferredOrientations([
+              DeviceOrientation.portraitDown,
+              DeviceOrientation.portraitUp,
+            ]);
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => TabBarDemo()),
+            );
+          },
+        ),
       ),
       body: Column(
         children: [
-          SizedBox(height: 100,),
+          SizedBox(height: 50,),
           Container(
             color: Colors.black12,
             padding: EdgeInsets.all(100),
