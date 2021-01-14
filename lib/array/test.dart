@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:kkk/tabs/mlkit.dart';
 
 import '../home.dart';
+import 'result.dart';
 
 class test extends StatefulWidget {
   @override
@@ -56,7 +57,13 @@ class _testState extends State<test> {
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10), //모서리를 둥글게
                     border: Border.all(color: Colors.indigo, width: 2)), //테두리
-                child: FlatButton(onPressed: null,
+                child: FlatButton(
+                    onPressed: (){
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => result()),
+                  );
+                },
                     child: Text("완료", style: TextStyle(color: Colors.indigo),
                     )
                 ),
@@ -87,8 +94,6 @@ class _testState extends State<test> {
 class MyPainter extends CustomPainter {
   @override void paint(Canvas canvas, Size size) {
     var myPaint = Paint();
-    myPaint.color = Colors.amber;
-    canvas.drawPaint(myPaint);
     myPaint.color = Colors.indigo;
     canvas.drawLine(Offset(10.0, 10.0), Offset(100.0, 100.0), myPaint);
     myPaint.color = Colors.indigo;
@@ -96,6 +101,17 @@ class MyPainter extends CustomPainter {
         Rect.fromCenter(center: Offset(100.0, 150.0), width: 100.0, height: 80.0),
         myPaint
     );
+    // var rect = Offset.zero & size;
+    // var gradient = RadialGradient(
+    //   center: const Alignment(0.7, -0.6),
+    //   radius: 0.2,
+    //   colors: [const Color(0xFFFFFF00), const Color(0xFF0099FF)],
+    //   stops: [0.4, 1.0],
+    // );
+    // canvas.drawRect(
+    //   rect,
+    //   Paint()..shader = gradient.createShader(rect),
+    // );
   }
   @override bool shouldRepaint(CustomPainter oldDelegate) {
     return false;
