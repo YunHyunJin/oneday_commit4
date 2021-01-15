@@ -91,10 +91,10 @@ class TabBarDemo extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.amber,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
-      ),
+      // theme: ThemeData(
+      //   primarySwatch: Colors.amber,
+      //   visualDensity: VisualDensity.adaptivePlatformDensity,
+      // ),
       home: MyHomePage(title: 'Advanced Flutter Camp'),
     );
   }
@@ -112,10 +112,12 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.title),
+        backgroundColor: Colors.white,
+        title: Text(widget.title, style: TextStyle(color: Colors.black),),
         leading: Container(
             child: Builder(builder: (BuildContext context){
               return IconButton(
+                color: Colors.black,
                 icon: Icon(Icons.share),
                 onPressed: (){
                   Scaffold.of(context).showSnackBar(SnackBar(
@@ -127,14 +129,14 @@ class _MyHomePageState extends State<MyHomePage> {
             )
         ),
         actions: [
-          IconButton(icon: Icon(Icons.exit_to_app),
+          IconButton(icon: Icon(Icons.exit_to_app, color: Colors.black,),
             onPressed: logout,
           )
         ],
       ),
       body: _pageOptions[selectedPage],
       bottomNavigationBar: ConvexAppBar(
-        backgroundColor: Colors.amber,
+        backgroundColor: Colors.white,
         color: Colors.black,
         items: [
           TabItem(icon: Icons.wrong_location_outlined, title: 'apitab'),
